@@ -1,8 +1,8 @@
-name: Init Workflow
+name: Demo Workflow
 on:
   workflow_dispatch:  # Manual trigger
 jobs:
-  init:
+  demo:
     runs-on: ubuntu-latest
     steps:
       - name: Prepare for artifact upload
