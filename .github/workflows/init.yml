@@ -1,0 +1,9 @@
+name: Init Workflow
+on:
+  workflow_dispatch:  # Manual trigger
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare for artifact upload
+        run: echo "Workflow ready"
