@@ -10,7 +10,7 @@ jobs:
   upload-artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact from external source
+      - name: Download artifact from GitHub Release
         run: curl -L "${{ github.event.inputs.artifact_url }}" -o gitlab_artifact.zip
 
       - name: Upload artifact to GitHub
