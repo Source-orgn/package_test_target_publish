@@ -1,0 +1,20 @@
+name: Migrate Artifact
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_url:
+        description: 'URL to download artifact'
+        required: true
+
+jobs:
+  upload-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact from external source
+        run: curl -L "${{ github.event.inputs.artifact_url }}" -o gitlab_artifact.zip
+
+      - name: Upload artifact to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: migrated-artifact
+          path: gitlab_artifact.zip
